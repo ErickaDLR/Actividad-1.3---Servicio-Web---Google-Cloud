@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ericka de la Ree</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f8ff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            overflow: hidden;
+            flex-direction: column;
+            background-image: url('https://s0.smartresize.com/wallpaper/473/159/HD-wallpaper-i-love-care-bears-blue-cute-heart-care-bears.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .centered-text {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="centered-text animate__animated animate__fadeIn" id="movableText" onclick="moveText()">
+        ERICKA DE LA REE
+    </div>
+
+    <div class="footer">
+        <p>MATERIA: AOS, ACTIVIDAD 1.3 SERVICIO WEB - GOOGLE CLOUD</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.js"></script>
+
+    <script>
+        function moveText() {
+            const textElement = document.getElementById("movableText");
+
+            const randomX = Math.floor(Math.random() * (window.innerWidth - textElement.offsetWidth));
+            const randomY = Math.floor(Math.random() * (window.innerHeight - textElement.offsetHeight));
+
+            textElement.style.position = 'absolute';
+            textElement.style.left = `${randomX}px`;
+            textElement.style.top = `${randomY}px`;
+
+            textElement.style.transition = 'all 0.5s ease';
+        }
+    </script>
+</body>
+</html>
